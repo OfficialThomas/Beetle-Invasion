@@ -72,4 +72,19 @@ public class PlayerBehavior : MonoBehaviour
     {
         transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X") * _rotationSpeed * Time.deltaTime, 0));
     }
+
+    public void ChangePOV()
+    {
+        if (_3rdPerson.enabled)
+        {
+            _3rdPerson.enabled = false;
+            _1stPerson.enabled = true;
+        }
+        else
+        {
+            _1stPerson.enabled = false;
+            _3rdPerson.enabled = true;
+        }
+
+    }
 }
